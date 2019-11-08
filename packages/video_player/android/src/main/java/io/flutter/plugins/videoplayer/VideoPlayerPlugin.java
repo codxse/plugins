@@ -53,12 +53,6 @@ import java.util.Map;
 import java.net.CookieHandler;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 
 public class VideoPlayerPlugin implements MethodCallHandler {
 
