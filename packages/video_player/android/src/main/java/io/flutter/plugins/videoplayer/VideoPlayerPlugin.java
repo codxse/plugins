@@ -50,6 +50,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
 public class VideoPlayerPlugin implements MethodCallHandler {
 
   private static class VideoPlayer {
@@ -79,6 +89,10 @@ public class VideoPlayerPlugin implements MethodCallHandler {
         String formatHint) {
       this.eventChannel = eventChannel;
       this.textureEntry = textureEntry;
+      
+      CookieManager cookieManager = new CookieManager();
+      cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+      CookieHandler.setDefault(cookieManager);
 
       TrackSelector trackSelector = new DefaultTrackSelector();
       exoPlayer = ExoPlayerFactory.newSimpleInstance(context, trackSelector);
